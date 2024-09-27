@@ -13,8 +13,7 @@ public class FilmeView {
             String [] escolha = {"Inserir","Alterar", "Excluir", "Listar"};
             FilmeController filmeController = new FilmeController();
             try{
-                opcao = JOptionPane.showOptionDialog(null, "Escolha uma das opções abaixo sobre filmess" +
-                                "huahuahua",
+                opcao = JOptionPane.showOptionDialog(null, "Escolha uma das opções abaixo sobre filmes",
                         "Escolha", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolha, escolha[0]);
                 switch (opcao){
                     case 0:
