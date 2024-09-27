@@ -14,6 +14,7 @@ public class FilmeController {
         filme.setGenero(genero);
         filme.setProdutora(produtora);
         Connection con = ConnectionFactory.abrirConexao();
+        System.out.println(con);
         FilmeDAO filmeDAO = new FilmeDAO(con);
         String resultado = filmeDAO.inserir(filme);
         ConnectionFactory.fecharConexao(con);
@@ -49,8 +50,11 @@ public class FilmeController {
 
         if(filmes != null){
             for (Filme filme : filmes){
-                resultado += "Nome do filme: " + filme.getTitulo() + "\nGênero: " + filme.getGenero() + "\nProdutora: " + filme.getProdutora() + "\n";
+                resultado += "Código: " + filme.getCodigo() +  "\nNome do filme: " + filme.getTitulo() + "\nGênero: " + filme.getGenero() + "\nProdutora" +
+                        ":" +
+                        " " + filme.getProdutora() + "\n\n";
             }
+            return resultado;
         }
         return "Sem filmes para listar!";
     }

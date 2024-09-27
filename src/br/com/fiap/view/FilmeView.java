@@ -22,6 +22,7 @@ public class FilmeView {
                         genero = JOptionPane.showInputDialog("Qual o gênero do filme?");
                         produtora = JOptionPane.showInputDialog("Qual a produtora do filme?");
                         JOptionPane.showMessageDialog(null, filmeController.inserirFilme(titulo, genero, produtora));
+                        break;
                     case 1:
                         id = Integer.parseInt(JOptionPane.showInputDialog("Insira o id do filme!"));
                         titulo = JOptionPane.showInputDialog("Nome do filme novo: ");

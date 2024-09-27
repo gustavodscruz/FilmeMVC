@@ -20,7 +20,7 @@ public class FilmeDAO {
     }
 
     public String inserir(Filme filme){
-        String sql = "insert into ddd_filme(titulo, genero, produtora) values(?, ?, ?)";
+        String sql = "insert into ddd_filme(TITULO, GENERO, PRODUTURA) values(?, ?, ?)";
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
             ps.setString(1, filme.getTitulo());
             ps.setString(2, filme.getGenero());
@@ -34,7 +34,7 @@ public class FilmeDAO {
         }
     }
     public String alterar(Filme filme){
-        String sql = "update ddd_filme set titulo = ?, genero = ?, produtora = ? where codigo = ?";
+        String sql = "update ddd_filme set TITULO = ?, GENERO = ?, PRODUTURA = ? where codigo = ?";
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
             ps.setInt(4, filme.getCodigo());
             ps.setString(1, filme.getTitulo());
@@ -74,6 +74,9 @@ public class FilmeDAO {
                     filme.setGenero(rs.getString(3));
                     filme.setProdutora(rs.getString(4));
                     listaDeFilmes.add(filme);
+                }
+                for (Filme filmao : listaDeFilmes){
+                    System.out.println(filmao.toString());
                 }
                 return listaDeFilmes;
             }
