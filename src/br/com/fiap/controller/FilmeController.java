@@ -14,7 +14,6 @@ public class FilmeController {
         filme.setGenero(genero);
         filme.setProdutora(produtora);
         Connection con = ConnectionFactory.abrirConexao();
-        System.out.println(con);
         FilmeDAO filmeDAO = new FilmeDAO(con);
         String resultado = filmeDAO.inserir(filme);
         ConnectionFactory.fecharConexao(con);

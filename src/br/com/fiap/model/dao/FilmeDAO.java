@@ -75,9 +75,6 @@ public class FilmeDAO {
                     filme.setProdutora(rs.getString(4));
                     listaDeFilmes.add(filme);
                 }
-                for (Filme filmao : listaDeFilmes){
-                    System.out.println(filmao.toString());
-                }
                 return listaDeFilmes;
             }
             System.out.println("Sem filmes para listar!");
